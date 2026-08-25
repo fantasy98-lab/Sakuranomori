@@ -3,402 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>さくらの杜保育園 トップページデザイン案（オリジナル制作例）</title>
+<title>まみたん｜Web制作ポートフォリオ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F2EFE6;
-    --paper-deep:#EAE5D8;
-    --ink:#332F28;
-    --ink-soft:#645F53;
-    --sakura:#E3A0AC;
-    --sakura-deep:#C4788A;
+    --paper:#F3F0E9;
+    --ink:#2B2A26;
+    --ink-soft:#6B6659;
+    --accent:#C4788A;
+    --accent-soft:#E3A0AC;
     --forest:#3B4A3D;
-    --forest-light:#6E7F6C;
     --gold:#B79A2E;
-    --line:rgba(51,47,40,0.12);
-    --radius:4px;
+    --line:rgba(43,42,38,0.12);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   body{
     margin:0;
     background:
-      radial-gradient(circle at 1px 1px, rgba(51,47,40,0.035) 1px, transparent 0) 0 0/22px 22px,
+      radial-gradient(circle at 1px 1px, rgba(43,42,38,0.035) 1px, transparent 0) 0 0/24px 24px,
       var(--paper);
     color:var(--ink);
     font-family:"Zen Maru Gothic","Zen Kaku Gothic New",sans-serif;
     line-height:1.85;
-    -webkit-font-smoothing:antialiased;
   }
-  a{color:inherit;text-decoration:none;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
-  .proposal-tag{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    background:var(--ink);color:var(--paper);
-    font-family:"Zen Kaku Gothic New",sans-serif;
-    font-size:12px;letter-spacing:.08em;
-    text-align:center;padding:6px 8px;
-  }
-  header.site{
-    position:sticky;top:28px;z-index:90;
-    background:rgba(242,239,230,0.88);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  header.site .wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    padding-top:16px;padding-bottom:16px;
-  }
-  .logo{
-    font-family:"Shippori Mincho",serif;
-    font-weight:700;font-size:19px;letter-spacing:.05em;
-    display:flex;align-items:center;gap:10px;
-  }
-  .logo .mark{
-    width:26px;height:26px;flex:none;
-  }
-  nav.main{display:flex;gap:28px;font-size:14px;letter-spacing:.03em;}
-  nav.main a{position:relative;padding:4px 0;color:var(--ink-soft);transition:color .2s;}
-  nav.main a:hover, nav.main a:focus-visible{color:var(--sakura-deep);}
-  nav.main a::after{
-    content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;
-    background:var(--sakura-deep);transition:width .25s ease;
-  }
-  nav.main a:hover::after{width:100%;}
-  .nav-cta{
-    font-size:13px;background:var(--forest);color:var(--paper);
-    padding:9px 18px;border-radius:99px;letter-spacing:.05em;
-    transition:background .2s;
-  }
-  .nav-cta:hover{background:var(--forest-light);}
+  a{color:inherit;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 32px;}
 
-  /* HERO */
-  .hero{position:relative;overflow:hidden;padding:96px 0 84px;}
-  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
-  .eyebrow{
-    font-size:12.5px;letter-spacing:.22em;color:var(--forest-light);
-    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  header{padding:64px 0 40px;}
+  .kicker{
+    font-size:12px;letter-spacing:.22em;color:var(--ink-soft);
+    display:flex;align-items:center;gap:10px;margin-bottom:20px;
   }
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--forest-light);}
-  h1.hero-title{
-    font-family:"Shippori Mincho",serif;
-    font-weight:700;
-    font-size:clamp(32px,4.2vw,50px);
-    line-height:1.55;
-    margin:0 0 26px;
-    color:var(--ink);
-  }
-  h1.hero-title em{
-    font-style:normal;color:var(--sakura-deep);
-    background:linear-gradient(transparent 62%, rgba(227,160,172,.35) 62%);
-  }
-  .hero-lede{
-    font-size:15.5px;color:var(--ink-soft);max-width:38em;margin-bottom:36px;
-  }
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:13px 26px;border-radius:99px;font-size:14px;letter-spacing:.04em;
-    border:1px solid var(--ink);transition:all .2s;
-  }
-  .btn.primary{background:var(--ink);color:var(--paper);}
-  .btn.primary:hover{background:var(--sakura-deep);border-color:var(--sakura-deep);}
-  .btn.ghost{background:transparent;color:var(--ink);}
-  .btn.ghost:hover{background:var(--ink);color:var(--paper);}
-
-  .hero-art{position:relative;height:420px;}
-  .petal{
-    position:absolute;opacity:.85;
-    animation:drift linear infinite;
-  }
-  @keyframes drift{
-    0%{transform:translateY(-10%) translateX(0) rotate(0deg);}
-    100%{transform:translateY(120%) translateX(24px) rotate(200deg);}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .petal{animation:none;}
-  }
-
-  /* SECTION HEADS */
-  .section{padding:88px 0;}
-  .section.alt{background:var(--paper-deep);}
-  .sec-head{max-width:640px;margin:0 auto 52px;text-align:center;}
-  .sec-head .eyebrow{justify-content:center;}
-  .sec-head .eyebrow::before{display:none;}
-  .sec-head h2{
+  .kicker::before{content:"";width:26px;height:1px;background:var(--ink-soft);}
+  h1{
     font-family:"Shippori Mincho",serif;font-weight:700;
-    font-size:clamp(24px,3vw,32px);margin:0 0 14px;
+    font-size:clamp(30px,4vw,44px);margin:0 0 20px;line-height:1.5;
   }
-  .sec-head p{color:var(--ink-soft);font-size:14.5px;margin:0;}
+  header p{color:var(--ink-soft);font-size:15px;max-width:34em;margin:0;}
 
-  /* PILLARS */
-  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-  .pillar{
-    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
-    padding:34px 28px;transition:transform .25s, box-shadow .25s;
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;}
+  .tag{
+    font-size:12px;letter-spacing:.03em;padding:5px 14px;border-radius:99px;
+    border:1px solid var(--line);color:var(--ink-soft);
   }
-  .pillar:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(51,47,40,.08);}
-  .pillar .icon{width:38px;height:38px;color:var(--forest);margin-bottom:18px;}
-  .pillar h3{font-family:"Shippori Mincho",serif;font-size:18px;margin:0 0 10px;}
-  .pillar p{font-size:13.8px;color:var(--ink-soft);margin:0;}
 
-  /* DAY TIMELINE */
-  .timeline{
-    display:grid;grid-template-columns:repeat(5,1fr);gap:0;
-    position:relative;
+  .section-title{
+    font-family:"Shippori Mincho",serif;font-size:15px;letter-spacing:.08em;
+    color:var(--forest);margin:56px 0 24px;padding-bottom:10px;border-bottom:1px solid var(--line);
   }
-  .timeline::before{
-    content:"";position:absolute;top:19px;left:0;right:0;height:1px;
-    background:var(--line);
-  }
-  .tl-item{position:relative;padding-top:52px;text-align:center;}
-  .tl-dot{
-    position:absolute;top:12px;left:50%;transform:translateX(-50%);
-    width:15px;height:15px;border-radius:50%;background:var(--paper-deep);
-    border:2px solid var(--sakura-deep);
-  }
-  .tl-time{font-family:"Shippori Mincho",serif;font-size:15px;color:var(--forest);margin-bottom:6px;}
-  .tl-label{font-size:13px;color:var(--ink-soft);}
 
-  /* NEWS */
-  .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .news-card{
-    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
-    overflow:hidden;transition:box-shadow .2s;
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:5px;overflow:hidden;
+    transition:transform .25s, box-shadow .25s;text-decoration:none;display:block;
   }
-  .news-card:hover{box-shadow:0 12px 26px rgba(51,47,40,.07);}
-  .news-thumb{
-    height:130px;background:
-      linear-gradient(135deg, var(--sakura) 0%, var(--paper-deep) 70%);
-    position:relative;
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(43,42,38,.1);}
+  .card-thumb{
+    height:160px;position:relative;overflow:hidden;
+    background:linear-gradient(135deg, var(--accent-soft) 0%, var(--paper) 75%);
   }
-  .news-thumb.forest{background:linear-gradient(135deg, var(--forest-light) 0%, var(--paper-deep) 70%);}
-  .news-thumb.gold{background:linear-gradient(135deg, var(--gold) 0%, var(--paper-deep) 75%);}
-  .news-body{padding:20px 22px 24px;}
-  .news-tag{
-    display:inline-block;font-size:11px;letter-spacing:.05em;
-    padding:3px 10px;border-radius:99px;background:var(--paper-deep);
-    color:var(--forest);margin-bottom:12px;
+  .card-thumb svg{position:absolute;bottom:-10px;right:-10px;opacity:.9;}
+  .card-body{padding:22px 24px 26px;}
+  .card-eyebrow{font-size:11px;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;display:block;}
+  .card h3{font-family:"Shippori Mincho",serif;font-size:17px;margin:0 0 10px;color:var(--ink);}
+  .card p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+  .card-link{
+    display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+    font-size:12.5px;color:var(--forest);letter-spacing:.03em;
   }
-  .news-date{font-size:12px;color:var(--ink-soft);letter-spacing:.03em;}
-  .news-title{font-size:14.5px;margin:8px 0 0;line-height:1.6;}
+  .card-link svg{width:12px;height:12px;transition:transform .2s;}
+  .card:hover .card-link svg{transform:translateX(3px);}
 
-  /* CTA */
-  .cta-section{
-    background:var(--forest);color:var(--paper);border-radius:6px;
-    padding:64px 56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+  .card.placeholder{
+    background:transparent;border:1px dashed var(--line);
+    display:flex;align-items:center;justify-content:center;min-height:236px;
+    color:var(--ink-soft);font-size:13px;text-align:center;padding:24px;
   }
-  .cta-section h2{
-    font-family:"Shippori Mincho",serif;font-weight:700;font-size:26px;margin:0 0 14px;
-  }
-  .cta-section p{color:rgba(242,239,230,.78);font-size:14px;margin:0;max-width:32em;}
-  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
-  .cta-buttons .btn{justify-content:center;border-color:rgba(242,239,230,.4);color:var(--paper);}
-  .cta-buttons .btn.solid{background:var(--paper);color:var(--forest);border-color:var(--paper);}
-  .cta-buttons .btn.solid:hover{background:var(--sakura);border-color:var(--sakura);color:var(--ink);}
-  .cta-buttons .btn:not(.solid):hover{background:rgba(242,239,230,.12);}
 
-  footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:20px;}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;}
-  .foot-col h4{font-size:13px;letter-spacing:.05em;color:var(--forest);margin:0 0 14px;}
-  .foot-col a{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:9px;}
-  .foot-col a:hover{color:var(--sakura-deep);}
-  .foot-note{font-size:11.5px;color:var(--ink-soft);opacity:.7;text-align:center;margin-top:44px;}
+  footer{padding:64px 0 48px;margin-top:40px;border-top:1px solid var(--line);}
+  footer p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+  footer a{color:var(--forest);}
 
-  @media(max-width:860px){
-    .hero .wrap{grid-template-columns:1fr;}
-    .hero-art{height:220px;order:-1;}
-    .pillars, .news-grid{grid-template-columns:1fr;}
-    .timeline{grid-template-columns:repeat(5,1fr);font-size:11px;}
-    .cta-section{grid-template-columns:1fr;padding:40px 26px;}
-    nav.main{display:none;}
+  @media(max-width:700px){
+    .grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
 <body>
 
-<div class="proposal-tag">オリジナル制作例 ／ 保育園HPデザイン案（架空の園名・プレースホルダー文言を使用）</div>
-
-<header class="site">
-  <div class="wrap">
-    <div class="logo">
-      <svg class="mark" viewBox="0 0 26 26" fill="none">
-        <path d="M13 3c1.8 2 1.8 4-0 6-1.8-2-1.8-4 0-6Z" fill="#C4788A"/>
-        <path d="M13 3c1.8 2 1.8 4-0 6-1.8-2-1.8-4 0-6Z" fill="#C4788A" transform="rotate(72 13 13)"/>
-        <path d="M13 3c1.8 2 1.8 4-0 6-1.8-2-1.8-4 0-6Z" fill="#C4788A" transform="rotate(144 13 13)"/>
-        <path d="M13 3c1.8 2 1.8 4-0 6-1.8-2-1.8-4 0-6Z" fill="#C4788A" transform="rotate(216 13 13)"/>
-        <path d="M13 3c1.8 2 1.8 4-0 6-1.8-2-1.8-4 0-6Z" fill="#C4788A" transform="rotate(288 13 13)"/>
-        <circle cx="13" cy="13" r="2.4" fill="#B79A2E"/>
-      </svg>
-      さくらの杜保育園
+<div class="wrap">
+  <header>
+    <div class="kicker">WEB DESIGN PORTFOLIO</div>
+    <h1>デザインを、<br>ひとつずつ形にする記録。</h1>
+    <p>看護師・保育士として現場に立ちながら、写真とWeb制作を学んでいます。ここでは、施設・お店など「架空の依頼」を想定して作ったデザイン提案をまとめています。</p>
+    <div class="tags">
+      <span class="tag">保育施設</span>
+      <span class="tag">HTML / CSS</span>
+      <span class="tag">制作中</span>
     </div>
-    <nav class="main">
-      <a href="#philosophy">保育について</a>
-      <a href="#day">園の一日</a>
-      <a href="#news">お知らせ</a>
-      <a href="#guardian">保護者様へ</a>
-      <a href="#corpo">法人ページ</a>
-    </nav>
-    <a class="nav-cta" href="#cta">見学のご案内</a>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <div class="eyebrow">SAKURA SHINMACHI NURSERY</div>
-      <h1 class="hero-title">自分で見つける。<br>自分で、<em>工夫する。</em></h1>
-      <p class="hero-lede">
-        さくらの杜保育園は、子どもたちが人やもの、環境に自ら関わりながら遊びを見つけ、工夫し、次の子どもたちへ伝えていく保育を大切にしています。緑ゆたかな住宅街の中で、ひとりひとりの「今」に寄り添います。
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#cta">保護者向け見学のご案内</a>
-        <a class="btn ghost" href="#philosophy">保育方針を見る</a>
+  <div class="section-title">Works — 保育・福祉施設のデザイン</div>
+  <div class="grid">
+    <a class="card" href="works/sakura-no-mori.html">
+      <div class="card-thumb">
+        <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+          <circle cx="70" cy="70" r="18" fill="#E3A0AC" opacity="0.9"/>
+          <circle cx="100" cy="45" r="12" fill="#B79A2E" opacity="0.85"/>
+          <circle cx="45" cy="95" r="10" fill="#C4788A" opacity="0.9"/>
+        </svg>
       </div>
-    </div>
-    <div class="hero-art">
-      <svg width="100%" height="100%" viewBox="0 0 380 420" fill="none">
-        <ellipse cx="190" cy="360" rx="130" ry="18" fill="#EAE5D8"/>
-        <path d="M190 340 C 150 300, 150 230, 190 190 C 230 230, 230 300, 190 340 Z" fill="#6E7F6C" opacity="0.85"/>
-        <circle cx="140" cy="150" r="34" fill="#E3A0AC" opacity="0.9"/>
-        <circle cx="235" cy="120" r="24" fill="#B79A2E" opacity="0.85"/>
-        <circle cx="195" cy="80" r="18" fill="#C4788A" opacity="0.9"/>
-      </svg>
-      <svg class="petal" style="left:15%;animation-duration:9s;animation-delay:0s;" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1c1.4 1.6 1.4 3.4 0 5-1.4-1.6-1.4-3.4 0-5Z" fill="#E3A0AC"/></svg>
-      <svg class="petal" style="left:55%;animation-duration:12s;animation-delay:2s;" width="14" height="14" viewBox="0 0 18 18"><path d="M9 1c1.4 1.6 1.4 3.4 0 5-1.4-1.6-1.4-3.4 0-5Z" fill="#C4788A"/></svg>
-      <svg class="petal" style="left:78%;animation-duration:10s;animation-delay:4s;" width="16" height="16" viewBox="0 0 18 18"><path d="M9 1c1.4 1.6 1.4 3.4 0 5-1.4-1.6-1.4-3.4 0-5Z" fill="#E3A0AC"/></svg>
-      <svg class="petal" style="left:35%;animation-duration:14s;animation-delay:1s;" width="12" height="12" viewBox="0 0 18 18"><path d="M9 1c1.4 1.6 1.4 3.4 0 5-1.4-1.6-1.4-3.4 0-5Z" fill="#B79A2E"/></svg>
+      <div class="card-body">
+        <span class="card-eyebrow">NURSERY SCHOOL</span>
+        <h3>さくらの杜保育園</h3>
+        <p>バナーが多く煩雑だった導線を整理し、園の理念を伝えるトップページを提案。</p>
+        <span class="card-link">
+          作品を見る
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <div class="card placeholder">
+      次の作品を準備中です<br>（施設ジャンル／テイスト違いを追加予定）
     </div>
   </div>
-</section>
 
-<section class="section" id="philosophy">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">OUR APPROACH</div>
-      <h2>保育のなかで、大切にしていること</h2>
-      <p>環境・人・時間のなかで、子どもが主役になれる保育を。</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v6M12 21v-6M3 12h6M15 12h6"/><circle cx="12" cy="12" r="3"/></svg>
-        <h3>主体性を育む環境</h3>
-        <p>モンテッソーリの考え方も取り入れ、子ども自身が選び、試し、繰り返せる環境づくりを行っています。</p>
-      </div>
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20c0-5 4-9 8-9s8 4 8 9"/><circle cx="12" cy="7" r="4"/></svg>
-        <h3>見守る、寄り添う保育</h3>
-        <p>看護師によるお子さまの健康管理や、日々の小さな変化に気づける体制を大切にしています。</p>
-      </div>
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12c3-4 6-4 9 0s6 4 9 0"/></svg>
-        <h3>伝承していく遊び</h3>
-        <p>年齢を超えて、子どもたちが遊びや工夫を自然に伝え合っていく関係性を育みます。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section alt" id="day">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">A DAY AT SAKURA SHINMACHI</div>
-      <h2>園の一日（イメージ）</h2>
-      <p>※実際のスケジュールは年齢・クラスにより異なります</p>
-    </div>
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">7:30</div><div class="tl-label">順次登園</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">9:30</div><div class="tl-label">遊び・活動</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">11:30</div><div class="tl-label">昼食</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">13:00</div><div class="tl-label">午睡</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">16:00</div><div class="tl-label">順次降園</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="news">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">NEWS</div>
-      <h2>お知らせ</h2>
-      <p>行事・保護者向け連絡・園の様子をタグで分けて表示（プレースホルダー）</p>
-    </div>
-    <div class="news-grid">
-      <div class="news-card">
-        <div class="news-thumb"></div>
-        <div class="news-body">
-          <span class="news-tag">行事</span>
-          <div class="news-date">2026.08.21</div>
-          <p class="news-title">8月のお誕生日会の様子</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb forest"></div>
-        <div class="news-body">
-          <span class="news-tag">お知らせ</span>
-          <div class="news-date">2026.06.01</div>
-          <p class="news-title">地域交流プログラムの活動報告</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb gold"></div>
-        <div class="news-body">
-          <span class="news-tag">見学案内</span>
-          <div class="news-date">2025.11.—</div>
-          <p class="news-title">保護者向け 園内見学のご案内</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="cta">
-  <div class="wrap">
-    <div class="cta-section">
-      <div>
-        <h2>まずは、園の様子を見に来ませんか</h2>
-        <p>保護者の方、保育関係者・学生・企業の方、それぞれのご案内をご用意しています。お気軽にお問い合わせください。</p>
-      </div>
-      <div class="cta-buttons">
-        <a class="btn solid" href="#">保護者向け見学のご案内</a>
-        <a class="btn" href="#">保育関係者・学生・企業向け見学</a>
-        <a class="btn" href="#">採用情報を見る</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer id="corpo">
-  <div class="wrap">
-    <div class="foot-col">
-      <h4>さくらの杜保育園</h4>
-      <a href="#">園の概要</a>
-      <a href="#">保育環境の紹介</a>
-      <a href="#">アクセス</a>
-    </div>
-    <div class="foot-col" id="guardian">
-      <h4>保護者様へ</h4>
-      <a href="#">お知らせ一覧</a>
-      <a href="#">園長ブログ</a>
-      <a href="#">せたがやのほいく</a>
-    </div>
-    <div class="foot-col">
-      <h4>SNS・関連リンク</h4>
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-      <a href="#">社会福祉法人 さくらの杜福祉会（架空）</a>
-    </div>
-    <div class="foot-col">
-      <h4>採用</h4>
-      <a href="#">採用情報</a>
-      <a href="#">サポートスタッフ募集</a>
-    </div>
-  </div>
-  <p class="foot-note">Copyright © 2026 Sakura no Mori Nursery（架空）. Design sample by まみたん.（本ページはポートフォリオ用オリジナル制作例です。実在の園・法人とは関係ありません）</p>
-</footer>
+  <footer>
+    <p>© 2026 まみたん — Design portfolio. すべて架空の設定によるオリジナル制作例です。<br>
+    お問い合わせ:noteまたはCrowdWorksのプロフィールよりご連絡ください。</p>
+  </footer>
+</div>
 
 </body>
 </html>
