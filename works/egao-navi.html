@@ -15,183 +15,108 @@
     --ink-soft:#645F53;
     --clay:#C97F4B;
     --clay-deep:#B5623F;
-    --forest:#3B4A3D;
-    --forest-light:#6E7F6C;
-    --gold:#B79A2E;
-    --line:rgba(51,47,40,0.12);
-    --radius:4px;
+    --clay-soft:#F0DCC6;
+    --line:rgba(51,47,40,0.14);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:
-      radial-gradient(circle at 1px 1px, rgba(51,47,40,0.035) 1px, transparent 0) 0 0/22px 22px,
-      var(--paper);
+    background:var(--paper);
     color:var(--ink);
     font-family:"Zen Maru Gothic","Zen Kaku Gothic New",sans-serif;
-    line-height:1.85;
+    line-height:1.95;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:inherit;text-decoration:none;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 28px;}
   .proposal-tag{
-    position:fixed;top:0;left:0;right:0;z-index:100;
     background:var(--ink);color:var(--paper);
-    font-family:"Zen Kaku Gothic New",sans-serif;
-    font-size:12px;letter-spacing:.08em;
-    text-align:center;padding:6px 8px;
+    font-family:"Zen Kaku Gothic New",sans-serif;font-size:12px;letter-spacing:.08em;
+    text-align:center;padding:8px;
   }
-  header.site{
-    position:sticky;top:28px;z-index:90;
-    background:rgba(242,239,230,0.88);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  header.site .wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    padding-top:16px;padding-bottom:16px;
-  }
-  .logo{
-    font-family:"Shippori Mincho",serif;
-    font-weight:700;font-size:19px;letter-spacing:.05em;
-    display:flex;align-items:center;gap:10px;
-  }
-  .logo .mark{width:26px;height:26px;flex:none;}
-  nav.main{display:flex;gap:28px;font-size:14px;letter-spacing:.03em;}
-  nav.main a{position:relative;padding:4px 0;color:var(--ink-soft);transition:color .2s;}
-  nav.main a:hover, nav.main a:focus-visible{color:var(--clay-deep);}
-  nav.main a::after{
-    content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;
-    background:var(--clay-deep);transition:width .25s ease;
-  }
-  nav.main a:hover::after{width:100%;}
-  .nav-cta{
-    font-size:13px;background:var(--forest);color:var(--paper);
-    padding:9px 18px;border-radius:99px;letter-spacing:.05em;
-    transition:background .2s;
-  }
-  .nav-cta:hover{background:var(--forest-light);}
 
-  .hero{position:relative;overflow:hidden;padding:96px 0 84px;}
-  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
-  .eyebrow{
-    font-size:12.5px;letter-spacing:.22em;color:var(--forest-light);
-    display:flex;align-items:center;gap:10px;margin-bottom:22px;
-  }
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--forest-light);}
-  h1.hero-title{
+  .masthead{padding:56px 0 40px;border-bottom:1px solid var(--line);}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-soft);margin-bottom:36px;text-decoration:none;}
+  .back-link:hover{color:var(--clay-deep);}
+  .eyebrow{font-size:12px;letter-spacing:.2em;color:var(--clay-deep);margin-bottom:16px;}
+  h1{
     font-family:"Shippori Mincho",serif;font-weight:700;
-    font-size:clamp(32px,4.2vw,50px);line-height:1.55;margin:0 0 26px;color:var(--ink);
+    font-size:clamp(30px,4.6vw,42px);line-height:1.6;margin:0 0 22px;
   }
-  h1.hero-title em{
-    font-style:normal;color:var(--clay-deep);
-    background:linear-gradient(transparent 62%, rgba(201,127,75,.28) 62%);
-  }
-  .hero-lede{font-size:15.5px;color:var(--ink-soft);max-width:38em;margin-bottom:36px;}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:13px 26px;border-radius:99px;font-size:14px;letter-spacing:.04em;
-    border:1px solid var(--ink);transition:all .2s;
-  }
-  .btn.primary{background:var(--ink);color:var(--paper);}
-  .btn.primary:hover{background:var(--clay-deep);border-color:var(--clay-deep);}
-  .btn.ghost{background:transparent;color:var(--ink);}
-  .btn.ghost:hover{background:var(--ink);color:var(--paper);}
+  .lede{font-size:15.5px;color:var(--ink-soft);max-width:32em;margin:0 0 28px;}
+  .meta-row{display:flex;gap:28px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft);}
+  .meta-row div span{display:block;}
+  .meta-row .k{letter-spacing:.08em;color:var(--clay-deep);margin-bottom:4px;font-size:11px;}
 
-  .hero-art{position:relative;height:360px;}
-
-  .section{padding:88px 0;}
-  .section.alt{background:var(--paper-deep);}
-  .sec-head{max-width:640px;margin:0 auto 52px;text-align:center;}
-  .sec-head .eyebrow{justify-content:center;}
-  .sec-head .eyebrow::before{display:none;}
-  .sec-head h2{
-    font-family:"Shippori Mincho",serif;font-weight:700;
-    font-size:clamp(24px,3vw,32px);margin:0 0 14px;
+  /* PHONE MOCK HERO */
+  .phone-stage{padding:64px 0 8px;display:flex;justify-content:center;}
+  .phone{
+    width:280px;border-radius:28px;background:#fff;border:1px solid var(--line);
+    box-shadow:0 24px 48px rgba(51,47,40,.12);overflow:hidden;
   }
-  .sec-head p{color:var(--ink-soft);font-size:14.5px;margin:0;}
+  .phone-bar{background:var(--clay-soft);color:var(--clay-deep);font-family:"Shippori Mincho",serif;
+    font-size:14px;padding:14px 18px;font-weight:700;}
+  .phone-body{padding:18px;display:flex;flex-direction:column;gap:10px;min-height:260px;background:var(--paper);}
+  .bubble{max-width:80%;padding:10px 14px;border-radius:14px;font-size:12.5px;line-height:1.7;}
+  .bubble.user{align-self:flex-end;background:var(--ink);color:var(--paper);}
+  .bubble.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);color:var(--ink);}
+  .phone-caption{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:14px;}
 
-  .pillars4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .pillar{
-    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
-    padding:28px 22px;transition:transform .25s, box-shadow .25s;
-  }
-  .pillar:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(51,47,40,.08);}
-  .pillar .icon{width:32px;height:32px;color:var(--forest);margin-bottom:16px;}
-  .pillar h3{font-family:"Shippori Mincho",serif;font-size:16px;margin:0 0 8px;}
-  .pillar p{font-size:13px;color:var(--ink-soft);margin:0;}
+  /* ENTRIES */
+  .entry{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:64px 0;border-bottom:1px solid var(--line);}
+  .entry:last-of-type{border-bottom:none;}
+  .num{font-family:"Shippori Mincho",serif;font-size:34px;color:var(--clay-soft);line-height:1;}
+  .entry h2{font-family:"Shippori Mincho",serif;font-size:21px;font-weight:700;margin:2px 0 18px;}
+  .entry p{font-size:14.5px;color:var(--ink-soft);margin:0 0 16px;max-width:44em;}
+  .entry p:last-child{margin-bottom:0;}
 
-  .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;}
-  .timeline::before{content:"";position:absolute;top:19px;left:0;right:0;height:1px;background:var(--line);}
-  .tl-item{position:relative;padding-top:52px;text-align:center;}
-  .tl-dot{
-    position:absolute;top:12px;left:50%;transform:translateX(-50%);
-    width:15px;height:15px;border-radius:50%;background:var(--paper-deep);
-    border:2px solid var(--clay-deep);
-  }
-  .tl-time{font-family:"Shippori Mincho",serif;font-size:15px;color:var(--forest);margin-bottom:6px;}
-  .tl-label{font-size:12.5px;color:var(--ink-soft);line-height:1.6;}
-
-  .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .news-card{
-    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
-    overflow:hidden;transition:box-shadow .2s;
-  }
-  .news-card:hover{box-shadow:0 12px 26px rgba(51,47,40,.07);}
-  .news-thumb{height:120px;background:linear-gradient(135deg, var(--clay) 0%, var(--paper-deep) 72%);position:relative;}
-  .news-thumb.forest{background:linear-gradient(135deg, var(--forest-light) 0%, var(--paper-deep) 72%);}
-  .news-thumb.gold{background:linear-gradient(135deg, var(--gold) 0%, var(--paper-deep) 75%);}
-  .news-body{padding:20px 22px 24px;}
-  .news-tag{
-    display:inline-block;font-size:11px;letter-spacing:.05em;
-    padding:3px 10px;border-radius:99px;background:var(--paper-deep);color:var(--forest);margin-bottom:12px;
-  }
-  .news-title{font-size:14.5px;margin:2px 0 0;line-height:1.6;font-weight:700;}
-  .news-desc{font-size:13px;color:var(--ink-soft);margin:8px 0 0;}
-
-  .stack-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:28px;}
-  .stack-tag{
-    font-size:12.5px;letter-spacing:.03em;padding:7px 16px;border-radius:99px;
-    border:1px solid var(--line);color:var(--ink-soft);background:var(--paper);
+  .pull{
+    border-left:3px solid var(--clay);padding:4px 0 4px 20px;margin:24px 0;
+    font-family:"Shippori Mincho",serif;font-size:16.5px;color:var(--ink);line-height:1.8;
   }
 
-  .shot-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
-  .shot{
-    border:1px dashed var(--line);border-radius:var(--radius);padding:56px 16px;
-    text-align:center;color:var(--ink-soft);font-size:13px;background:var(--paper);
+  .kv-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 4px;}
+  .kv-table th{
+    text-align:left;font-weight:700;color:var(--clay-deep);padding:8px 12px 8px 0;
+    border-bottom:1px solid var(--line);white-space:nowrap;width:110px;font-family:"Zen Kaku Gothic New",sans-serif;
   }
+  .kv-table td{padding:8px 0;border-bottom:1px solid var(--line);color:var(--ink-soft);}
 
-  .cta-section{
-    background:var(--forest);color:var(--paper);border-radius:6px;
-    padding:64px 56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+  .file-list{list-style:none;margin:8px 0 0;padding:0;font-size:13.5px;}
+  .file-list li{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);}
+  .file-list code{font-family:monospace;color:var(--clay-deep);font-size:12.5px;}
+  .file-list span{color:var(--ink-soft);}
+
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+  .feature{border:1px solid var(--line);border-radius:4px;padding:16px 16px;background:#fff;}
+  .feature .tag{font-size:10.5px;letter-spacing:.06em;color:var(--clay-deep);display:block;margin-bottom:6px;}
+  .feature .t{font-size:13.5px;font-weight:700;margin:0 0 4px;}
+  .feature p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+
+  .shot-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
+  .shot{border:1px dashed var(--line);border-radius:4px;padding:52px 14px;text-align:center;color:var(--ink-soft);font-size:12.5px;background:#fff;}
+
+  .stack-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+  .stack-tag{font-size:12px;padding:6px 14px;border-radius:99px;border:1px solid var(--line);color:var(--ink-soft);}
+
+  .cta-block{
+    background:var(--ink);color:var(--paper);border-radius:6px;padding:44px 36px;text-align:center;margin:8px 0;
   }
-  .cta-section h2{font-family:"Shippori Mincho",serif;font-weight:700;font-size:26px;margin:0 0 14px;}
-  .cta-section p{color:rgba(242,239,230,.78);font-size:14px;margin:0;max-width:32em;}
-  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
-  .cta-buttons .btn{justify-content:center;border-color:rgba(242,239,230,.4);color:var(--paper);}
-  .cta-buttons .btn.solid{background:var(--paper);color:var(--forest);border-color:var(--paper);}
-  .cta-buttons .btn.solid:hover{background:var(--clay);border-color:var(--clay);color:var(--ink);}
-  .cta-buttons .btn:not(.solid):hover{background:rgba(242,239,230,.12);}
+  .cta-block h2{font-family:"Shippori Mincho",serif;font-size:22px;margin:0 0 12px;}
+  .cta-block p{color:rgba(242,239,230,.75);font-size:13.5px;max-width:32em;margin:0 auto 24px;}
+  .cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:12px 26px;border-radius:99px;font-size:13.5px;letter-spacing:.03em;border:1px solid rgba(242,239,230,.4);}
+  .btn.solid{background:var(--clay);border-color:var(--clay);color:#fff;}
+  .btn.solid:hover{background:var(--clay-deep);border-color:var(--clay-deep);}
+  .btn:not(.solid):hover{background:rgba(242,239,230,.1);}
 
-  footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:20px;}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;}
-  .foot-col h4{font-size:13px;letter-spacing:.05em;color:var(--forest);margin:0 0 14px;}
-  .foot-col p, .foot-col span{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:9px;}
-  .foot-note{font-size:11.5px;color:var(--ink-soft);opacity:.7;text-align:center;margin-top:44px;}
-  .back-link{display:inline-block;margin-bottom:12px;font-size:13px;color:var(--forest);}
+  footer{padding:48px 0;text-align:center;}
+  footer p{font-size:11.5px;color:var(--ink-soft);opacity:.75;margin:0;}
 
-  @media(max-width:860px){
-    .hero .wrap{grid-template-columns:1fr;}
-    .hero-art{height:200px;order:-1;}
-    .pillars4, .news-grid, .shot-row{grid-template-columns:1fr 1fr;}
-    .timeline{grid-template-columns:repeat(5,1fr);font-size:11px;}
-    .cta-section{grid-template-columns:1fr;padding:40px 26px;}
-    nav.main{display:none;}
-  }
   @media(max-width:560px){
-    .pillars4, .news-grid, .shot-row{grid-template-columns:1fr;}
+    .entry{grid-template-columns:1fr;gap:8px;}
+    .feature-grid, .shot-row{grid-template-columns:1fr;}
+    .file-list li{grid-template-columns:1fr;gap:2px;}
   }
 </style>
 </head>
@@ -199,222 +124,137 @@
 
 <div class="proposal-tag">オリジナル制作例 ／ 老人施設向け認知症予防プログラム支援AIエージェント（架空施設・データを使用）</div>
 
-<header class="site">
-  <div class="wrap">
-    <div class="logo">
-      <svg class="mark" viewBox="0 0 26 26" fill="none">
-        <circle cx="13" cy="13" r="10" fill="#C97F4B" opacity="0.85"/>
-        <circle cx="13" cy="13" r="4" fill="#B79A2E"/>
-      </svg>
-      えがおナビ
-    </div>
-    <nav class="main">
-      <a href="#background">背景</a>
-      <a href="#program">プログラム設計</a>
-      <a href="#app">現場アプリ</a>
-      <a href="#stack">技術構成</a>
-    </nav>
-    <a class="nav-cta" href="#cta">試してみる</a>
-  </div>
-</header>
+<div class="wrap">
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <div class="eyebrow">DEMENTIA CARE SUPPORT AGENT</div>
-      <h1 class="hero-title">続けることを、<br><em>AIが支える。</em></h1>
-      <p class="hero-lede">
-        老人施設向けの認知症予防プログラムを、企画からAIエージェント構築、現場スタッフが使うアプリの実装まで一貫して制作。
-        「効果があると分かっていても、人手不足で続けられない」という現場の課題に向き合いました。
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#cta">デモを試す</a>
-        <a class="btn ghost" href="#background">制作背景を見る</a>
-      </div>
+  <header class="masthead">
+    <a class="back-link" href="../index.html">← 作品一覧に戻る</a>
+    <div class="eyebrow">CASE STUDY — DEMENTIA CARE SUPPORT AGENT</div>
+    <h1>続けることを、AIが支える。<br>「えがおナビ」制作記録</h1>
+    <p class="lede">
+      老人施設向けの認知症予防プログラムを、企画からAIエージェント構築、現場スタッフが使うアプリの実装まで
+      一貫して設計・制作したケーススタディです。
+    </p>
+    <div class="meta-row">
+      <div><span class="k">担当</span><span>企画・エージェント設計・実装</span></div>
+      <div><span class="k">使用ツール</span><span>Claude Code / Claude API / React</span></div>
+      <div><span class="k">制作期間</span><span>2026年〇月〜〇月</span></div>
     </div>
-    <div class="hero-art">
-      <svg width="100%" height="100%" viewBox="0 0 380 360" fill="none">
-        <circle cx="190" cy="180" r="120" fill="#EAE5D8"/>
-        <circle cx="150" cy="150" r="46" fill="#C97F4B" opacity="0.85"/>
-        <circle cx="240" cy="120" r="30" fill="#B79A2E" opacity="0.85"/>
-        <circle cx="205" cy="230" r="22" fill="#6E7F6C" opacity="0.85"/>
-      </svg>
-    </div>
-  </div>
-</section>
+  </header>
 
-<section class="section" id="background">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">BACKGROUND</div>
-      <h2>制作のきっかけ</h2>
-      <p>89歳の父の認知機能低下を目の当たりにし、進行を緩やかにする方法を模索したことから始まったプロジェクトです。</p>
-    </div>
-    <div class="news-grid">
-      <div class="news-card">
-        <div class="news-thumb"></div>
-        <div class="news-body">
-          <span class="news-tag">課題</span>
-          <p class="news-title">分かっていても続けられない</p>
-          <p class="news-desc">会話や運動で進行を緩やかにできると分かっていても、施設現場は人手不足で入居者に十分構えない。</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb forest"></div>
-        <div class="news-body">
-          <span class="news-tag">担当範囲</span>
-          <p class="news-title">企画からAIエージェント構築まで</p>
-          <p class="news-desc">プログラムの企画設計、Claude Codeによるエージェント構築、現場向けアプリのUI/UX実装を一貫して担当。</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb gold"></div>
-        <div class="news-body">
-          <span class="news-tag">強み</span>
-          <p class="news-title">現場知見をそのまま設計に</p>
-          <p class="news-desc">看護師としての現場経験を、プログラム設計とエージェントの人格設計の両方に反映。</p>
-        </div>
+  <div class="phone-stage">
+    <div class="phone">
+      <div class="phone-bar">えがおナビ</div>
+      <div class="phone-body">
+        <div class="bubble user">今週のまとめ作って</div>
+        <div class="bubble bot">今週は月曜の回想法が特に盛り上がりました。参加度は◎が7割、△が2名、×はいませんでした。木曜のM.T.様は少し疲れ気味とのメモがあります。来週は…</div>
       </div>
     </div>
   </div>
-</section>
+  <p class="phone-caption">実際のチャット画面をもとにしたイメージ</p>
 
-<section class="section alt" id="program">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">PROGRAM DESIGN</div>
-      <h2>4つの柱で構成する週間プログラム</h2>
-      <p>認知刺激・身体運動・社会的交流・生活習慣。自立群／軽度低下群／要介助群の3段階で難易度を調整します。</p>
-    </div>
-    <div class="pillars4">
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
-        <h3>認知刺激</h3>
-        <p>会話、回想法、脳トレ、学習</p>
-      </div>
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20c0-5 4-9 8-9s8 4 8 9"/><circle cx="12" cy="7" r="4"/></svg>
-        <h3>身体運動</h3>
-        <p>有酸素運動、筋トレ、バランス訓練</p>
-      </div>
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 20c0-4 3-6 5-6s2 1 4 1 2-1 4-1 5 2 5 6"/></svg>
-        <h3>社会的交流</h3>
-        <p>グループ活動、役割付与</p>
-      </div>
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v9l6 3"/><circle cx="12" cy="12" r="9"/></svg>
-        <h3>生活習慣</h3>
-        <p>睡眠、栄養、日光浴、生活リズム</p>
-      </div>
-    </div>
+  <article>
 
-    <div class="timeline" style="margin-top:56px;">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">月</div><div class="tl-label">体操＋散歩<br>回想法</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">火</div><div class="tl-label">脳トレ<br>音楽療法</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">水</div><div class="tl-label">コグニサイズ<br>手工芸・園芸</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">木</div><div class="tl-label">ウォーキング<br>料理・行事準備</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">金</div><div class="tl-label">集団ゲーム<br>個別面談</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="app">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">FIELD APP</div>
-      <h2>現場スタッフが使うアプリ</h2>
-      <p>Claude Codeの操作を知らないスタッフでも、スマホのブラウザだけでそのまま使える形に実装しました。</p>
-    </div>
-    <div class="news-grid">
-      <div class="news-card">
-        <div class="news-thumb"></div>
-        <div class="news-body">
-          <span class="news-tag">記録</span>
-          <p class="news-title">参加度・面談記録をボタン入力</p>
-          <p class="news-desc">◎○△×のボタン選択と一言メモだけで、活動参加度と個別面談の様子を記録。</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb forest"></div>
-        <div class="news-body">
-          <span class="news-tag">チャット</span>
-          <p class="news-title">実データを踏まえて会話・作成</p>
-          <p class="news-desc">保存された記録をもとに、週次サマリーや配布プリントをその場で作成。</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb gold"></div>
-        <div class="news-body">
-          <span class="news-tag">履歴</span>
-          <p class="news-title">日々の記録を振り返る</p>
-          <p class="news-desc">日付ごとに参加記録・面談記録を一覧表示し、経過を追える。</p>
-        </div>
-      </div>
-    </div>
-    <div class="shot-row">
-      <div class="shot">記録画面のスクリーンショット</div>
-      <div class="shot">チャット画面のスクリーンショット</div>
-      <div class="shot">履歴画面のスクリーンショット</div>
-    </div>
-  </div>
-</section>
-
-<section class="section alt" id="stack">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">STRUCTURE & STACK</div>
-      <h2>エージェントの構造と使用技術</h2>
-      <p>CLAUDE.mdを起点に、docs／programs／templates／skillsの4層で構造化しました。</p>
-    </div>
-    <div class="stack-row">
-      <span class="stack-tag">Claude Code</span>
-      <span class="stack-tag">Claude（Anthropic API）</span>
-      <span class="stack-tag">React</span>
-      <span class="stack-tag">Canva</span>
-      <span class="stack-tag">GitHub Pages</span>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="cta">
-  <div class="wrap">
-    <div class="cta-section">
+    <section class="entry">
+      <div class="num">01</div>
       <div>
-        <h2>実際に触ってみませんか</h2>
-        <p>記録入力・AIチャットまで、実際に動くデモをご用意しています。ご興味があればお気軽にお問い合わせください。</p>
+        <h2>背景</h2>
+        <p>きっかけは、89歳の父の認知機能低下だった。会話や運動によって進行を緩やかにできることは知られているが、実際の施設現場は人手不足で、入居者一人ひとりに十分に構う余裕がない。</p>
+        <div class="pull">「やった方がいいのは分かっていても、続けられない」</div>
+        <p>この現場のジレンマに向き合うため、準備・記録・振り返りの負担をAIエージェントが引き受ける設計にした。</p>
       </div>
-      <div class="cta-buttons">
-        <a class="btn solid" href="#">デモを開く</a>
-        <a class="btn" href="../index.html">他の作品を見る</a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-col">
-      <h4>プロジェクトについて</h4>
-      <span>背景と課題設定</span>
-      <span>4本柱のプログラム設計</span>
-      <span>横展開を意識したファイル構成</span>
-    </div>
-    <div class="foot-col">
-      <h4>担当領域</h4>
-      <span>プログラム企画</span>
-      <span>AIエージェント設計</span>
-      <span>現場アプリのUI/UX実装</span>
-    </div>
-    <div class="foot-col">
-      <h4>使用ツール</h4>
-      <span>Claude Code</span>
-      <span>Claude（Anthropic API）</span>
-      <span>React ／ Canva</span>
+    <section class="entry">
+      <div class="num">02</div>
+      <div>
+        <h2>プログラム設計</h2>
+        <p>認知刺激・身体運動・社会的交流・生活習慣の4つの柱で週間プログラムを構成。自立群／軽度低下群／要介助群の3段階で難易度を調整した。</p>
+        <table class="kv-table">
+          <tr><th>月</th><td>体操＋散歩／回想法</td></tr>
+          <tr><th>火</th><td>脳トレ／音楽療法</td></tr>
+          <tr><th>水</th><td>コグニサイズ／手工芸・園芸</td></tr>
+          <tr><th>木</th><td>ウォーキング／料理・行事準備</td></tr>
+          <tr><th>金</th><td>集団ゲーム／個別面談</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="entry">
+      <div class="num">03</div>
+      <div>
+        <h2>エージェント構築</h2>
+        <p>Claude Codeを用いて、要件・進行手順・記録テンプレート・カスタムスキルをファイルとして構造化。CLAUDE.mdを起点に動くエージェントとして構築した。</p>
+        <ul class="file-list">
+          <li><code>docs/</code><span>要件定義、エージェントの人格・自己紹介</span></li>
+          <li><code>programs/</code><span>曜日ごとの活動進行手順（スタッフ向け台本）</span></li>
+          <li><code>templates/</code><span>参加記録・個別面談・評価シートのひな形</span></li>
+          <li><code>skills/</code><span>週次サマリー作成、プリント生成、推移分析、家族向け報告文作成</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="entry">
+      <div class="num">04</div>
+      <div>
+        <h2>現場実装</h2>
+        <p>Claude Codeの操作を知らないスタッフでも使えるよう、スマホのブラウザで開けるアプリとして展開した。</p>
+        <div class="feature-grid">
+          <div class="feature">
+            <span class="tag">記録</span>
+            <p class="t">ボタン入力</p>
+            <p>参加度・体調・気分をボタン選択のみで記録</p>
+          </div>
+          <div class="feature">
+            <span class="tag">チャット</span>
+            <p class="t">実データで応答</p>
+            <p>保存記録を踏まえてサマリーや配布物を作成</p>
+          </div>
+          <div class="feature">
+            <span class="tag">履歴</span>
+            <p class="t">日々振り返り</p>
+            <p>日付ごとに記録を一覧表示</p>
+          </div>
+        </div>
+        <div class="shot-row">
+          <div class="shot">記録画面</div>
+          <div class="shot">チャット画面</div>
+          <div class="shot">履歴画面</div>
+        </div>
+        <p style="margin-top:20px;">使用技術</p>
+        <div class="stack-row">
+          <span class="stack-tag">Claude Code</span>
+          <span class="stack-tag">Claude（Anthropic API）</span>
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">Canva</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="entry">
+      <div class="num">05</div>
+      <div>
+        <h2>今後</h2>
+        <p>現在は小規模な現場検証の段階。今後は実際の施設でのフィードバックを反映しながら、記録データの本番運用に耐えるセキュリティ設計や、より多くのスタッフが使いやすい形への改善を進めていきたい。</p>
+        <p>また、他の介護施設への横展開を見据え、<code>programs/</code>や<code>templates/</code>の中身を施設ごとに書き換えるためのカスタマイズガイドも用意した。</p>
+      </div>
+    </section>
+
+  </article>
+
+  <div class="cta-block">
+    <h2>実際に触ってみませんか</h2>
+    <p>記録入力・AIチャットまで、実際に動くデモをご用意しています。</p>
+    <div class="cta-buttons">
+      <a class="btn solid" href="#">デモを開く</a>
+      <a class="btn" href="../index.html">他の作品を見る</a>
     </div>
   </div>
-  <p class="foot-note">Copyright © 2026 えがおナビ（架空の施設向け制作例）. Design &amp; build by まみたん.（本ページはポートフォリオ用オリジナル制作例です。実在の施設とは関係ありません）</p>
-</footer>
+
+  <footer>
+    <p>Copyright © 2026 えがおナビ（架空の施設向け制作例）. Design &amp; build by まみたん.（本ページはポートフォリオ用オリジナル制作例です。実在の施設とは関係ありません）</p>
+  </footer>
+
+</div>
 
 </body>
 </html>
